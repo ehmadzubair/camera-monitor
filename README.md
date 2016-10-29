@@ -10,12 +10,11 @@ Capture web camera image using python scripts and send into server.
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Install python 2.7 in operating system
+* Extract the VideoCapture-0.9-5.zip 
+* Copy DLLs and Lib data from VideoCapture-0.9-5 folder into python installation folder in operating system
+* Run command "pip install requests"
+* Run command "pip install pillow==2.9.1"
 
 ### Contribution guidelines ###
 
