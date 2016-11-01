@@ -1,6 +1,6 @@
 # Web Camera monitoring  #
 
-Capture web camera image using python scripts and send into server.
+Capture web camera image using python scripts and send into the server.
 
 ### What is this repository for? ###
 
@@ -15,14 +15,3 @@ Capture web camera image using python scripts and send into server.
 * Copy DLLs and Lib data from VideoCapture-0.9-5 folder into python installation folder in operating system
 * Run command "pip install requests"
 * Run command "pip install pillow==2.9.1"
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
