@@ -8,6 +8,7 @@ import requests
 class Http(object):
     def __init__(self):
         self._url = None
+        self._id = None
         self._primary_camera_image = None
         self._secondary_camera_image = None
 
@@ -30,6 +31,14 @@ class Http(object):
             exit(0)
 
         self._url = value
+
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+        self._id = value
 
     @property
     def primary_camera_image_path(self):
@@ -64,7 +73,7 @@ class Http(object):
 
     def send_data(self, first_response, second_response):
 
-        payload_data = {"image_date": str(time.strftime('%Y-%m-%d %H:%M:%S'))}
+        payload_data = {"image_date": str(time.strftime('%Y-%m-%d %H:%M:%S')), 'id': self.id}
         payload_file = {}
 
         if first_response['success'] is True:
@@ -81,4 +90,5 @@ class Http(object):
 
         response = requests.post(self.http_host, data=payload_data, files=payload_file)
         if response.status_code == 200:
+            print response.content
             print "All process completed"
