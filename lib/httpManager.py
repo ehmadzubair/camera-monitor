@@ -72,7 +72,6 @@ class Http(object):
             pass
 
     def send_data(self, first_response, second_response):
-
         payload_data = {"image_date": str(time.strftime('%Y-%m-%d %H:%M:%S')), 'id': self.id}
         payload_file = {}
 
@@ -80,15 +79,20 @@ class Http(object):
             try:
                 payload_file["primary_image"] = open(self.primary_camera_image_path, "rb")
             except Exception as e:
+                print e.message
                 payload_data["error"] += e.message
 
         if second_response['success'] is True:
             try:
                 payload_file["secondary_image"] = open(self.secondary_camera_image_path, "rb")
             except Exception as e:
+                print e.message
                 payload_data["error"] += e.message
 
         response = requests.post(self.http_host, data=payload_data, files=payload_file)
         if response.status_code == 200:
             print response.content
             print "All process completed"
+        else:
+            print response.content
+            print "Request failed!"

@@ -52,7 +52,6 @@ class Camera(object):
         except Exception as e:
             print e.message
             first_snapshot["success"] = False
-            first_snapshot["error"] = e.message
             self._videoCapture = None
 
         try:
@@ -62,7 +61,6 @@ class Camera(object):
         except Exception as e:
             print e.message
             second_snapshot["success"] = False
-            second_snapshot["error"] = e.message
             self._videoCapture = None
 
         return first_snapshot, second_snapshot
