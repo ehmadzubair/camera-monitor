@@ -9,7 +9,6 @@ BASE_DIR = os.getcwd()
 config_file = os.path.join(BASE_DIR, 'config.ini')
 primary_camera_image = os.path.join(BASE_DIR, 'primary_camera_image.jpg')
 secondary_camera_image = os.path.join(BASE_DIR, 'secondary_camera_image.jpg')
-error_msg = []
 
 
 class CameraMonitor(object):
@@ -31,7 +30,6 @@ class CameraMonitor(object):
         self._camera.secondary_camera = int(self._parser.get('setting', 'SECONDARY_CAMERA'))
         self._camera.primary_camera_image_path = primary_camera_image
         self._camera.secondary_camera_image_path = secondary_camera_image
-
 
     def run(self):
         if self._http.host_alive() is False:
