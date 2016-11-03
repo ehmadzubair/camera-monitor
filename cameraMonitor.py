@@ -5,7 +5,9 @@ import sys
 from lib.cameraManager import Camera
 from lib.httpManager import Http
 
-BASE_DIR = os.getcwd()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# os.path.dirname(os.path.realpath(__file__))
+
 config_file = os.path.join(BASE_DIR, 'config.ini')
 primary_camera_image = os.path.join(BASE_DIR, 'primary_camera_image.jpg')
 secondary_camera_image = os.path.join(BASE_DIR, 'secondary_camera_image.jpg')
