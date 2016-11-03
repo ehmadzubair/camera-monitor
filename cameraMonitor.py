@@ -1,11 +1,17 @@
 import ConfigParser
-import os
+import os.path
 import sys
 
 from lib.cameraManager import Camera
 from lib.httpManager import Http
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+try:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    BASE_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+#os.path.dirname(os.path.abspath(__file__))
 # os.path.dirname(os.path.realpath(__file__))
 
 config_file = os.path.join(BASE_DIR, 'config.ini')
