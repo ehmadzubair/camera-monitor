@@ -11,3 +11,4 @@ Capture web camera image using python scripts and send into the server.
 * Run command "pip install pillow==2.9.0"
 * Install py2exe application from data folder
 * (./setup.py py2exe ) This command will generate the executable cameraMonitor.exe in dist folder
+* Install OpenCV 3.1.0 for windows
