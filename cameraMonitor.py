@@ -2,17 +2,13 @@ import ConfigParser
 import os.path
 import sys
 
-from lib.cameraManager import Camera
 from lib.httpManager import Http
-
+from lib.opencvLib import Camera
 
 try:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 except NameError:
     BASE_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
-
-#os.path.dirname(os.path.abspath(__file__))
-# os.path.dirname(os.path.realpath(__file__))
 
 config_file = os.path.join(BASE_DIR, 'config.ini')
 primary_camera_image = os.path.join(BASE_DIR, 'primary_camera_image.jpg')

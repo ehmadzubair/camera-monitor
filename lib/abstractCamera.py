@@ -1,9 +1,14 @@
-import VideoCapture
+import abc
 
 
-class Camera(object):
+class CameraBase(object):
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractmethod
+    def save_snapshot(self):
+        pass
+
     def __init__(self):
-        self._videoCapture = None
         self._primary_camera = None
         self._secondary_camera = None
         self._primary_camera_image_path = None
@@ -40,27 +45,3 @@ class Camera(object):
     @secondary_camera_image_path.setter
     def secondary_camera_image_path(self, value):
         self._secondary_camera_image_path = value
-
-    def save_snapshot(self):
-        first_snapshot = {"success": True}
-        second_snapshot = {"success": True}
-
-        try:
-            self._videoCapture = VideoCapture.Device(devnum=int(self.primary_camera))
-            self._videoCapture.getImage().save(self.primary_camera_image_path)
-            self._videoCapture = None
-        except Exception as e:
-            print e.message
-            first_snapshot["success"] = False
-            self._videoCapture = None
-
-        try:
-            self._videoCapture = VideoCapture.Device(devnum=int(self.secondary_camera))
-            self._videoCapture.getImage().save(self.secondary_camera_image_path)
-            self._videoCapture = None
-        except Exception as e:
-            print e.message
-            second_snapshot["success"] = False
-            self._videoCapture = None
-
-        return first_snapshot, second_snapshot
