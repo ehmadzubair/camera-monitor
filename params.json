@@ -1,0 +1,6 @@
+{
+  "name": "Camera-monitor",
+  "tagline": "Capture image from cam send to define IP address.",
+  "body": "# Web Camera monitoring  #\r\n\r\nCapture web camera image using python scripts and send into the server.\r\n\r\n### How do I get set up? ###\r\n\r\n* Install python 2.7 in operating system\r\n* Extract the VideoCapture-0.9-5.zip \r\n* Copy DLLs and Lib data from VideoCapture-0.9-5 folder into python installation folder in operating system\r\n* Run command \"pip install requests\"\r\n* Run command \"pip install pillow==2.9.0\"\r\n* Install py2exe application from data folder\r\n* (./setup.py py2exe ) This command will generate the executable cameraMonitor.exe in dist folder\r\n* Install OpenCV 3.1.0 for windows",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
